@@ -1,10 +1,13 @@
-
 {% if user.is_authenticated %}
 
     Пользователь {{user.username}}
+
+    <a href="{% url 'createtodos' %}">Создание задач</a>
+    <a href="{% url 'currenttodos' %}">Мои задачи</a>
+    <a href="{% url 'completedtodo' %}">Выполненное</a>
+
     <form method="POST" action="{% url 'logoutuser' %}">
         {% csrf_token %}
-        {{ form.as_p }}
         <button type="submit">Выйти</button>
     </form>
 

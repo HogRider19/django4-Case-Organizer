@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Список задач</h1>
+<h1>Завершенные задачи</h1>
 
 <ul>
     {% for todo in todos %}
@@ -10,6 +10,7 @@
         <li>
             {% if todo.important %}<b>{% endif %}{{todo.title}}</b>
             {% if todo.description %} - {{todo.description}}{% endif %}
+            {{ todo.datecompleted }}
         </li>
     </a>
     {% endfor %}
